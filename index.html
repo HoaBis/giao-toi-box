@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <title>Giao tới</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      display: flex;
+      justify-content: center;
+      margin-top: 100px;
+      background: #f5f5f5;
+    }
+    .delivery-box {
+      border: 1px solid #d1d5db;
+      border-radius: 12px;
+      display: flex;
+      align-items: center;
+      padding: 10px 16px;
+      background: #fff;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+    }
+    .delivery-box strong {
+      margin-right: 10px;
+      font-weight: 700;
+      color: #111827;
+    }
+    .delivery-box .icon {
+      margin-right: 8px;
+      font-size: 18px;
+      color: gray;
+    }
+    .delivery-box input {
+      border: none;
+      outline: none;
+      font-size: 16px;
+      color: #374151;
+      width: 200px;
+    }
+    .delivery-box button {
+      border: none;
+      background: none;
+      font-size: 18px;
+      color: gray;
+      margin-left: 10px;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+  <div class="delivery-box">
+    <strong>GIAO TỚI</strong>
+    <span class="icon">📍</span>
+    <input type="text" placeholder="Nhập địa chỉ của bạn" id="locationInput">
+    <button onclick="getLocation()">🎯</button>
+  </div>
+
+  <script>
+    function getLocation() {
+      if (navigator.geolocation) {
+        navigator.geolocation.getCurrentPosition((pos) => {
+          const lat = pos.coords.latitude.toFixed(5);
+          const lon = pos.coords.longitude.to
